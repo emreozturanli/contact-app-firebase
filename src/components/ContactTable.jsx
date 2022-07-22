@@ -20,12 +20,12 @@ export default function ContactTable({ contactList, openSnackbar }) {
     const [open, setOpen] = React.useState(false);
 
     const columns = [
-        { id: 'name', label: 'Name', minWidth: 150 },
-        { id: 'phone', label: 'Phone', minWidth: 150 },
+        { id: 'name', label: 'Name', minWidth: 100 },
+        { id: 'phone', label: 'Phone', minWidth: 100 },
         {
             id: 'gender',
             label: 'Gender',
-            minWidth: 150,
+            minWidth: 100,
             align: 'left',
             format: (value) => value.toLocaleString('en-US'),
         }
