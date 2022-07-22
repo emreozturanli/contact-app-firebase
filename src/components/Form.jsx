@@ -15,7 +15,7 @@ import { db } from '../firebase/firebase';
 import { set, ref, push, onValue, } from 'firebase/database';
 
 
-const Form = ({setContactList}) => {
+const Form = ({setContactList, openSnackbar}) => {
     const [gender, setGender] = useState('');
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
@@ -35,6 +35,7 @@ const Form = ({setContactList}) => {
         setName('');
         setPhone('');
         setGender('');
+        openSnackbar('New Contact Successfully Added!','success')
     };
     useEffect(() => {
         const userRef = ref(db, "Contacts");

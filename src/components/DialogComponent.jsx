@@ -14,7 +14,7 @@ import { ref, update } from 'firebase/database';
 
 
 
-export default function DialogComponent({ open, setOpen, setUpdateInfo,updateInfo }) {
+export default function DialogComponent({ open, setOpen, setUpdateInfo,updateInfo, openSnackbar }) {
     
     const handleClose = () => {
         setOpen(false);
@@ -33,6 +33,7 @@ export default function DialogComponent({ open, setOpen, setUpdateInfo,updateInf
             phone:updateInfo.phone
         })
         handleClose();
+        openSnackbar('Contact Successfully Edited', 'success')
     }
     return (
         <div>

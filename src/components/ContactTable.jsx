@@ -13,7 +13,7 @@ import {  ref, remove } from 'firebase/database';
 import { db } from '../firebase/firebase';
 import DialogComponent from './DialogComponent';
 
-export default function ContactTable({ contactList }) {
+export default function ContactTable({ contactList, openSnackbar }) {
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(5);
     const [updateInfo, setUpdateInfo] = React.useState({});
@@ -50,6 +50,7 @@ export default function ContactTable({ contactList }) {
 
     const deleteContact = (id) => {
         remove(ref(db, 'Contacts/' + id))
+        openSnackbar('Contact Succesfully Deleted','success')
     }
     const handleEdit = (id,name,phone,gender) => {
         setUpdateInfo({id:id,name:name,phone:phone,gender:gender})
@@ -95,7 +96,7 @@ export default function ContactTable({ contactList }) {
                                         })}
                                         <TableCell><EditIcon sx={{ color: "blue", cursor: "pointer" }} onClick={()=> handleEdit(row.id, row.name, row.phone, row.gender)}/></TableCell>
                                         <TableCell><DeleteIcon sx={{ color: "red", cursor: "pointer" }} onClick={()=> deleteContact(row.id)} /></TableCell>
-                                        <DialogComponent updateInfo={updateInfo} open={open} setOpen={setOpen} setUpdateInfo={setUpdateInfo}/>
+                                        <DialogComponent updateInfo={updateInfo} open={open} setOpen={setOpen} setUpdateInfo={setUpdateInfo} openSnackbar={openSnackbar}/>
                                     </TableRow>
                                 );
                             })}
