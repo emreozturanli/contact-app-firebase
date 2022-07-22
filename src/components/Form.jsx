@@ -72,8 +72,7 @@ const Form = ({setContactList, openSnackbar}) => {
                 ),
             }} onChange={(e) => setName(e.target.value)} value={name}
                 required />
-
-            <TextField fullWidth label={'Phone'} id="margin-dense" margin="normal" InputProps={{
+            <TextField  fullWidth label={'Phone'} id="margin-dense" margin="normal" InputProps={{
                 startAdornment: (
                     <InputAdornment position="start">
                         <PhoneIcon />

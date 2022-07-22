@@ -12,8 +12,6 @@ import Select from '@mui/material/Select';
 import { db } from '../firebase/firebase';
 import { ref, update } from 'firebase/database';
 
-
-
 export default function DialogComponent({ open, setOpen, setUpdateInfo,updateInfo, openSnackbar }) {
     
     const handleClose = () => {
