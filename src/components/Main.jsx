@@ -18,11 +18,11 @@ const Main = () => {
   };
 
     return (
-        <Grid container sx={{ marginTop: '4rem',alignItems:"center" }}>
-          <Grid item xs={12} md={4}>
+        <Grid container sx={{ marginTop: '2rem',alignItems:"center" }}>
+          <Grid item xs={12} md={5} lg ={4}>
             <Form contactList={contactList} setContactList={setContactList} openSnackbar={openSnackbar}/>
           </Grid>
-          <Grid item xs={12} md={8} sx={{padding:"5rem"}}>
+          <Grid item xs={12} md={7} lg={8} sx={{padding:" 2rem 4rem"}}>
             <ContactTable contactList={contactList} openSnackbar={openSnackbar}/>
           </Grid>
             <SnackAlert open={open} setOpen={setOpen} message={message} severity={severity} />
