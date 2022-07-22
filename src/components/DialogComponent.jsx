@@ -57,7 +57,7 @@ export default function DialogComponent({ open, setOpen, setUpdateInfo,updateInf
                         id="phone"
                         label="Phone"
                         name="phone"
-                        type="number"
+                        type="tel"
                         fullWidth
                         variant="standard"
                         value={updateInfo.phone}
