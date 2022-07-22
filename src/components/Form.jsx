@@ -56,7 +56,7 @@ const Form = ({setContactList, openSnackbar}) => {
     return (
         <form style={{ padding: "4rem" }} onSubmit={writeToDatabase}>
 
-            <Typography variant="h4" component="h3">
+            <Typography variant="h4" component="h3" sx={{color:'#1976D2'}}>
                 New Contact
             </Typography>
 
@@ -76,7 +76,7 @@ const Form = ({setContactList, openSnackbar}) => {
                     </InputAdornment>
                 ),
             }} onChange={(e) => setPhone(e.target.value)} value={phone}
-                required type="number"/>
+                required type="tel"/>
 
             <Box sx={{ minWidth: 120, marginTop: "1rem" }}>
                 <FormControl fullWidth>
